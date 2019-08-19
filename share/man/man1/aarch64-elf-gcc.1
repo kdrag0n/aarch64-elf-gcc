@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "GCC 1"
-.TH GCC 1 "2019-05-03" "gcc-9.1.0" "GNU"
+.TH GCC 1 "2019-08-12" "gcc-9.2.0" "GNU"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -11355,6 +11355,13 @@ The maximum number of instructions that an outer loop can have
 before the loop versioning pass considers it too big to copy,
 discounting any instructions in inner loops that directly benefit
 from versioning.
+.IP "\fBssa-name-def-chain-limit\fR" 4
+.IX Item "ssa-name-def-chain-limit"
+The maximum number of \s-1SSA_NAME\s0 assignments to follow in determining
+a property of a variable such as its value.  This limits the number
+of iterations or recursive calls \s-1GCC\s0 performs when optimizing certain
+statements or when determining their validity prior to issuing
+diagnostics.
 .RE
 .RS 4
 .RE
